@@ -4,90 +4,99 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Calculator
+namespace ConsoleApp5
 {
-	class Program
-	{
-		public static int Add(int x,int y)
-		{
+    class Program
+    {
+        int i;
+        int j;
+        string d;
+        static void Addition(int i, int j, out int result)
+        {
+            i = i;
+            j = j;
+            result = i + j;
+        }
+        static void Multipication(int i, int j, out int result1)
+        {
+            i = i;
+            j = j;
+            result1 = i * j;
+        }
+        static void Substraction(int i, int j, out int result2)
+        {
+            i = i;
+            j = j;
+            result2 = i - j;
+        }
+        static void Main(string[] args)
+        {
 
-			int result = x + y;
-			return result;
-
-
-		}
-		public static int Sub(int x,int y,out int z)
-		{
-
-			 z = x - y;
-			return z;
-
-		}
-		public static int Mul(int x, int y)
-		{
-
-			int result = x * y;
-			return result;
-		}
-		public static int Div(int x,int y, out int z)
-		{
-
-			z = x - y;
-			return z;
-		}
-		static void Main(string[] args)
-		{
-			Console.WriteLine("Welcome to the Calculator :");
-			Console.WriteLine("Enter 1 for Addition");
-			Console.WriteLine("Enter 2 for Subtraction");
-			Console.WriteLine("Enter 3 for Multiplication");
-			Console.WriteLine("Enter 4 for Division \n");
-			int choice = Convert.ToInt32(Console.ReadLine());
-			Console.WriteLine("Please Enter the First Input");
-			int x = Convert.ToInt32(Console.ReadLine());
-			Console.WriteLine("Please Enter the Second Input");
-			int y = Convert.ToInt32(Console.ReadLine());
-			int output = 0;
-			int yes = 1;
-			do
-			{
-				switch (choice)
-				{
-					case 1:
-						{
-							output = Add(x, y);
-							Console.WriteLine("The ouput is " + output);
-							break;
-						}
-					case 2:
-						{
-							output = Sub(x, y, out int z);
-							Console.WriteLine("The ouput is " + output);
-							break;
-						}
-					case 3:
-						{
-							output = Mul(x, y);
-							Console.WriteLine("The ouput is " + output);
-							break;
-						}
-					case 4:
-						{
-							output = Div(x, y, out int z);
-							Console.WriteLine("The ouput is " + output);
-							break;
-						}
+            Program p = new Program();
+            do
+            {
+                Console.WriteLine("ENTER THE ");
+                Console.WriteLine("PRESS 1 FOR ADDITION");
+                Console.WriteLine("PRESS 2 FOR MULTIPICATION");
+                Console.WriteLine("PRESS 3 FOR SUBSTRACTION");
+                int enter;
+                enter = Convert.ToInt32(Console.ReadLine());
 
 
-				}
-				Console.WriteLine("Do you Want to Continue 1. Yes 2. No \n");
-				int action = Convert.ToInt32(Console.ReadLine());
-				if (action == 2)
-					yes++;
 
-			} while (yes==1);
 
-		}
+                switch (enter)
+                {
+                    case 1:
 
-	}
-}
+                        int result = 0;
+                        Console.WriteLine("enter 1st number");
+                        p.i = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("enter 2nd number");
+                        p.j = Convert.ToInt32(Console.ReadLine());
+                        Addition(p.i, p.j, out result);
+                        Console.WriteLine(result);
+
+
+                        break;
+
+                    case 2:
+                        int result1 = 0;
+                        Console.WriteLine("enter 1st number");
+                        p.i = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("enter 2nd number");
+                        p.j = Convert.ToInt32(Console.ReadLine());
+                        Multipication(p.i, p.j, out result1);
+                        Console.WriteLine(result1);
+                        break;
+
+                    case 3:
+                        int result2 = 0;
+                        Console.WriteLine("enter 1st number");
+                        p.i = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("enter 2nd number");
+                        p.j = Convert.ToInt32(Console.ReadLine());
+                        Substraction(p.i, p.j, out result2);
+                        Console.WriteLine(result2);
+                        break;
+
+                }
+
+                Console.WriteLine("DO YOU WANT ANYTHING ELSE");
+                Console.WriteLine("If you want press Y/y");
+                
+               p. d = Console.ReadLine();
+                
+
+               // enter = Convert.ToInt32(Console.ReadLine());
+
+
+            }
+            while (p.d=="Y"||p.d=="y");
+           
+            }
+        }
+
+
+
+    }
